@@ -212,7 +212,7 @@
       "name": "[variables('cgfPIPAddressName')]",
       "location": "[resourceGroup().location]",
       "sku": {
-        "name": "[variables('PublicIPSKU')]"
+        "name": "[parameters('PublicIPSKU')]"
       },
       "properties": {
         "publicIPAllocationMethod": "[variables('cgfPIPAddressType')]"

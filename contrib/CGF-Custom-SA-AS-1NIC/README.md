@@ -38,6 +38,7 @@ subnetPrefixCGF | Network range of the Subnet containing the CloudGen Firewall (
 imageSKU | SKU Hourly (PAYG) or BYOL (Bring your own license)
 imageVersion | Version of the Barracuda CloudGen Firewall
 vmSize | Size of the VMs to be created
+PublicIPSKU | SKU for public IP address (standard or basic)
 enableAccelerated | Enabled accelerated networking support in Azure
 fwVMAddress | Static IP Address of the CGF VM in Azure
 ccManaged | Is this instance managed via a CloudGen Control Center (Yes/No)
@@ -50,10 +51,10 @@ ccSecret | Secret to retrieve the configuration from the CloudGen Control Center
 
 The package provides a deploy.ps1 and deploy.sh for Powershell or Azure CLI based deployments. This can be peformed from the Azure Portal as well as the any system that has either of these scripting infrastructures installed. Or you can deploy from the Azure Portal using the provided link.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fbarracudanetworks%2Fngf-azure-templates%2Fmaster%2Fcontrib%2FCGF-Custom-SA-AS-1NIC%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmercutioviz%2Fngf-azure-templates%2Fmaster%2Fcontrib%2FCGF-Custom-SA-AS-1NIC%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
-<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fbarracudanetworks%2Fngf-azure-templates%2Fmaster%2Fcontrib%2FCGF-Custom-SA-AS-1NIC%2Fazuredeploy.json" target="_blank">
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fmercutioviz%2Fngf-azure-templates%2Fmaster%2Fcontrib%2FCGF-Custom-SA-AS-1NIC%2Fazuredeploy.json" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
