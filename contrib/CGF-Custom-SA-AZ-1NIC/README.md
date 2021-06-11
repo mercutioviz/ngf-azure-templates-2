@@ -19,7 +19,7 @@ You can enable programatic deployment via Powershell using the Cloud Shell featu
 ## Deployed resources
 Following resources will be created by the template:
 - One route table that will route all traffic for networks except for the internal networks to the CGF
-- One Virtual machine with a network interface and public IP
+- One Virtual machine with a network interface and public IP in the specified AZ
 
 **Note** The backend subnets and resources are *not* automatically created by the template. This has to be done manually after template deployment has finished.
 
@@ -32,6 +32,7 @@ vNetResourceGroup | Resource Group that contains the VNET where the CGF will be 
 vNetName | The name of the VNET where the CGF will be installed in
 subnetNameCGF | The name of the subnet where CGF will be installed
 subnetPrefixCGF | Network range of the Subnet containing the CloudGen Firewall (e.g. 172.16.136.0/24)
+availabilityZone | AZ number (1, 2, or 3)
 imageSKU | SKU Hourly (PAYG) or BYOL (Bring your own license)
 imageVersion | Version of the Barracuda CloudGen Firewall
 vmSize | Size of the VMs to be created
@@ -46,10 +47,10 @@ ccSecret | Secret to retrieve the configuration from the CloudGen Control Center
 
 The package provides a deploy.ps1 and deploy.sh for Powershell or Azure CLI based deployments. This can be peformed from the Azure Portal as well as the any system that has either of these scripting infrastructures installed. Or you can deploy from the Azure Portal using the provided link.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fbarracudanetworks%2Fngf-azure-templates%2Fmaster%2Fcontrib%2FCGF-Custom-SA-1NIC%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmercutioviz%2Fngf-azure-templates-2%2Fmaster%2Fcontrib%2FCGF-Custom-SA-AZ-1NIC%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
-<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fbarracudanetworks%2Fngf-azure-templates%2Fmaster%2Fcontrib%2FCGF-Custom-SA-1NIC%2Fazuredeploy.json" target="_blank">
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fmercutioviz%2Fngf-azure-templates-2%2Fmaster%2Fcontrib%2FCGF-Custom-SA-AZ-1NIC%2Fazuredeploy.json" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 

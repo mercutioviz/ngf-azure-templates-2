@@ -20,6 +20,9 @@
     "subnetCGF": {
       "value": "172.16.136.0/24"
     },
+    "availabilityZone": {
+      "value": "1"
+    },
     "imageSKU": {
       "value": "byol"
     },
