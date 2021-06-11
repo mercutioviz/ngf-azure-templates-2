@@ -39,6 +39,24 @@
         "description": "Network range of the Subnet containing the CloudGen Firewall (e.g. 172.16.136.0/24)"
       }
     },
+    "InternalLBPrivateIP": {
+      "type": "string",
+      "metadata": {
+        "description": "Private IP address of the internal load balancer (e.g. 172.16.136.10)"
+      }
+    },
+    "PrimaryCGFPrivateIP": {
+      "type": "string",
+      "metadata": {
+        "description": "Private IP address of the primary CG Firewall (e.g. 172.16.136.11)"
+      }
+    },
+    "SecondaryCGFPrivateIP": {
+      "type": "string",
+      "metadata": {
+        "description": "Private IP address of the secondary CG Firewall (e.g. 172.16.136.12)"
+      }
+    },
     "imageSKU": {
       "type": "string",
       "metadata": {
@@ -155,7 +173,7 @@
     "lbBackEndPoolID-internal": "[concat(variables('lbID-internal'),'/backendAddressPools/loadBalancerBackend')]",
     "lbProbeID-external": "[concat(variables('lbID-external'),'/probes/HAProbe')]",
     "lbProbeID-internal": "[concat(variables('lbID-internal'),'/probes/HAProbe')]",
-    "lbIPAddress-internal": "[concat( variables( 'cgfSubnetAddrSplit' )[0], '.', variables( 'cgfSubnetAddrSplit' )[1], '.', variables( 'cgfSubnetAddrSplit' )[2], '.', add( int( variables( 'cgfSubnetAddrSplit' )[3]), 4 ))]",
+    "lbIPAddress-internal": "[variables('InternalLBPrivateIP')]",
 
     "adminUsername": "notused",
     "singleQuotationMark": "'",
@@ -164,8 +182,8 @@
     "cgfSubnetAddrSplit": "[split( variables( 'cgfSubnetSplit' )[0], '.' )]",
     "cgfSubnetMask": "[variables( 'cgfSubnetSplit' )[1]]",
     "cgfSubnetDefaultGw": "[concat( variables( 'cgfSubnetAddrSplit' )[0], '.', variables( 'cgfSubnetAddrSplit' )[1], '.', variables( 'cgfSubnetAddrSplit' )[2], '.', add( int( variables( 'cgfSubnetAddrSplit' )[3]), 1 ))]",
-    "cgfVmAddress1": "[concat( variables( 'cgfSubnetAddrSplit' )[0], '.', variables( 'cgfSubnetAddrSplit' )[1], '.', variables( 'cgfSubnetAddrSplit' )[2], '.', add( int( variables( 'cgfSubnetAddrSplit' )[3]), 5 ))]",
-    "cgfVmAddress2": "[concat( variables( 'cgfSubnetAddrSplit' )[0], '.', variables( 'cgfSubnetAddrSplit' )[1], '.', variables( 'cgfSubnetAddrSplit' )[2], '.', add( int( variables( 'cgfSubnetAddrSplit' )[3]), 6 ))]",
+    "cgfVmAddress1": "[variables('PrimaryCGFPrivateIP')]",
+    "cgfVmAddress2": "[variables('SecondaryCGFPrivateIP')]",
 
     "cgfCustomDataStart": "[concat('#!/bin/bash\n\n/opb/cloud-setmip ', variables('cgfVmAddress1'), ' ', variables( 'cgfSubnetMask' ), ' ', variables( 'cgfSubnetDefaultGw' ))]",
     "RESTenabled": "\n/opb/cloud-enable-rest\n",

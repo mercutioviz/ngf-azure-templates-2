@@ -20,6 +20,15 @@
     "subnetCGF": {
       "value": "172.16.136.0/24"
     },
+    "PrimaryCGFPrivateIP": {
+      "value": "172.16.136.11"
+    },
+    "SecondaryCGFPrivateIP": {
+      "value": "172.16.136.12"
+    },
+    "InternalLBPrivateIP": {
+      "value": "172.16.136.10"
+    },
     "vmSize": {
       "value": "Standard_DS2_v2"
     },
