@@ -35,6 +35,9 @@
     "ipAddressCGF": {
       "value": "172.16.136.10"
     },
+    "PublicIPSKU": {
+      "value": "Standard"
+    },
     "ccManaged": {
       "value": "no"
     },
