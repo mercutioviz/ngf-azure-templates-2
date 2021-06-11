@@ -173,7 +173,7 @@
     "lbBackEndPoolID-internal": "[concat(variables('lbID-internal'),'/backendAddressPools/loadBalancerBackend')]",
     "lbProbeID-external": "[concat(variables('lbID-external'),'/probes/HAProbe')]",
     "lbProbeID-internal": "[concat(variables('lbID-internal'),'/probes/HAProbe')]",
-    "lbIPAddress-internal": "[variables('InternalLBPrivateIP')]",
+    "lbIPAddress-internal": "[parameters('InternalLBPrivateIP')]",
 
     "adminUsername": "notused",
     "singleQuotationMark": "'",
@@ -182,8 +182,8 @@
     "cgfSubnetAddrSplit": "[split( variables( 'cgfSubnetSplit' )[0], '.' )]",
     "cgfSubnetMask": "[variables( 'cgfSubnetSplit' )[1]]",
     "cgfSubnetDefaultGw": "[concat( variables( 'cgfSubnetAddrSplit' )[0], '.', variables( 'cgfSubnetAddrSplit' )[1], '.', variables( 'cgfSubnetAddrSplit' )[2], '.', add( int( variables( 'cgfSubnetAddrSplit' )[3]), 1 ))]",
-    "cgfVmAddress1": "[variables('PrimaryCGFPrivateIP')]",
-    "cgfVmAddress2": "[variables('SecondaryCGFPrivateIP')]",
+    "cgfVmAddress1": "[parameters('PrimaryCGFPrivateIP')]",
+    "cgfVmAddress2": "[parameters('SecondaryCGFPrivateIP')]",
 
     "cgfCustomDataStart": "[concat('#!/bin/bash\n\n/opb/cloud-setmip ', variables('cgfVmAddress1'), ' ', variables( 'cgfSubnetMask' ), ' ', variables( 'cgfSubnetDefaultGw' ))]",
     "RESTenabled": "\n/opb/cloud-enable-rest\n",
