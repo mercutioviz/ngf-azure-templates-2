@@ -29,8 +29,8 @@
     "enableREST": {
       "value": "yes"
     },
-        "ccManaged": {
-      "value": "no"
+    "ccManaged": {
+    "value": "no"
     },
     "ccIpAddress": {
       "value": ""
