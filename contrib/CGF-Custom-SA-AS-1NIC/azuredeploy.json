@@ -89,6 +89,17 @@
       ],
       "defaultValue": "no"
     },
+    "PublicIPSKU": {
+      "type": "string",
+      "metadata": {
+        "description": "SKU for public IP address (standard or basic)"
+      },
+      "allowedValues": [
+        "Standard",
+        "Basic"
+      ],
+      "defaultValue": "Standard"
+    },    
     "ccManaged": {
       "type": "string",
       "allowedValues": [
@@ -200,6 +211,9 @@
       "type": "Microsoft.Network/publicIPAddresses",
       "name": "[variables('cgfPIPAddressName')]",
       "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "[variables('PublicIPSKU')]"
+      },
       "properties": {
         "publicIPAllocationMethod": "[variables('cgfPIPAddressType')]"
       }

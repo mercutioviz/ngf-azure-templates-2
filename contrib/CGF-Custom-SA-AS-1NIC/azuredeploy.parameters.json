@@ -26,6 +26,9 @@
     "imageSKU": {
       "value": "byol"
     },
+    "PublicIPSKU": {
+      "value": "Standard"
+    },
     "imageVersion": {
       "value": "latest"
     },
